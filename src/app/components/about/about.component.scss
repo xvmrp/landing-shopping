@@ -1,0 +1,92 @@
+:host {
+  display: block;
+}
+
+/* --- Bloque "espíritu" --------------------------------------------------- */
+.espiritu {
+  background: var(--negro);
+  color: #fff;
+  border-radius: 24px;
+  padding: 40px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+  align-items: center;
+}
+
+.espiritu h2 {
+  color: var(--naranjo);
+}
+
+.espiritu p {
+  color: #ddd;
+  font-size: 15px;
+}
+
+/* La foto conserva el encuadre original (contain sobre fondo casi negro),
+   pero como <img> en vez de background-image: gana alt, lazy-load y SEO. */
+.foto-boton {
+  display: block;
+  width: 100%;
+  padding: 0;
+  border: none;
+  background: none;
+  cursor: zoom-in;
+  border-radius: 16px;
+}
+
+.foto {
+  display: block;
+  width: 100%;
+  height: 340px;
+  object-fit: contain;
+  background-color: #0d0d0d;
+  border-radius: 16px;
+}
+
+/* --- Lightbox (modal informativo, abierto con signal) -------------------- */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.85);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  z-index: 130;
+}
+
+.lightbox-cont {
+  position: relative;
+  max-width: 90vw;
+  max-height: 90vh;
+}
+
+.lightbox-cont .cerrar {
+  position: absolute;
+  top: -38px;
+  right: 0;
+  font-size: 26px;
+  color: #fff;
+  cursor: pointer;
+  background: none;
+  border: none;
+  font-family: inherit;
+  line-height: 1;
+}
+
+.lightbox-cont img {
+  display: block;
+  max-width: 90vw;
+  max-height: 85vh;
+  border-radius: 12px;
+  object-fit: contain;
+  background: #fff;
+  margin: 0 auto;
+}
+
+@media (max-width: 760px) {
+  .espiritu {
+    grid-template-columns: 1fr;
+  }
+}

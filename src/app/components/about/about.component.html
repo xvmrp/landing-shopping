@@ -1,0 +1,37 @@
+<section id="nosotros">
+  <div class="espiritu">
+    <button type="button" class="foto-boton" (click)="abrirFoto()" aria-label="Ampliar la foto del local">
+      <img
+        class="foto"
+        src="/tienda.jpg"
+        alt="Fachada de El shopping en Santa Rosa 8201, Santiago"
+        loading="lazy"
+      />
+    </button>
+
+    <div>
+      <h2>No somos una cadena.<br />Somos tu shopping de barrio.</h2>
+      <p>
+        Hace años que en Santa Rosa 8201 ayudamos a las familias a vestirse sin quebrar el
+        presupuesto. Conocemos a nuestros clientes por nombre, y ahora también nos encuentras en
+        redes sociales — pero seguimos siendo el mismo local de siempre: cercano, honesto y con las
+        mejores ofertas de la zona.
+      </p>
+    </div>
+  </div>
+</section>
+
+@if (fotoAmpliada()) {
+  <div
+    class="lightbox"
+    role="dialog"
+    aria-modal="true"
+    aria-label="Foto del local"
+    (click)="cerrarFoto()"
+  >
+    <div class="lightbox-cont" (click)="$event.stopPropagation()">
+      <button type="button" class="cerrar" (click)="cerrarFoto()" aria-label="Cerrar">✕</button>
+      <img src="/tienda.jpg" alt="Fachada de El shopping en Santa Rosa 8201, Santiago" />
+    </div>
+  </div>
+}

@@ -1,0 +1,44 @@
+<!-- Cabecera: logo + acciones -->
+<header>
+  <a class="logo" href="#inicio" (click)="cerrarMenu()">
+    <div class="bee">🐝</div>
+    <div>
+      <span class="brand">El shopping</span>
+      <small>Le conviene...</small>
+    </div>
+  </a>
+
+  <div class="acciones">
+    <a
+      class="icono-mapa"
+      [href]="urlMapa"
+      target="_blank"
+      rel="noopener"
+      title="Nuestra tienda"
+      aria-label="Ver la tienda en Google Maps"
+      >📍</a
+    >
+
+    <button
+      type="button"
+      class="hamburguesa"
+      (click)="alternarMenu()"
+      [attr.aria-expanded]="menuAbierto()"
+      aria-controls="menu-principal"
+      aria-label="Abrir menú de navegación"
+    >
+      @if (menuAbierto()) {
+        ✕
+      } @else {
+        ☰
+      }
+    </button>
+  </div>
+</header>
+
+<!-- Navegación simple -->
+<nav id="menu-principal" [class.abierta]="menuAbierto()">
+  @for (enlace of enlaces; track enlace.href) {
+    <a [href]="enlace.href" (click)="cerrarMenu()">{{ enlace.texto }}</a>
+  }
+</nav>

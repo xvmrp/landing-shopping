@@ -1,0 +1,35 @@
+<section id="ubicacion">
+  <h2>Visítanos</h2>
+  <p class="subt">¿Prefieres verlo en persona? Mejor aún.</p>
+
+  <div class="visitanos">
+    <div class="mapa">
+      <!-- src estático a propósito: un [src] enlazado en un <iframe> exigiría
+           DomSanitizer.bypassSecurityTrustResourceUrl. -->
+      <iframe
+        src="https://www.google.com/maps?q=Santa+Rosa+8201,+Santiago,+Chile&output=embed"
+        title="Mapa de El shopping, Santa Rosa 8201, Santiago"
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+        allowfullscreen
+      ></iframe>
+      <a class="mapa-link" [href]="urlMapa" target="_blank" rel="noopener">
+        Abrir en Google Maps ↗
+      </a>
+    </div>
+
+    <div class="info-tienda">
+      @for (dato of datos; track dato.texto) {
+        <div class="dato"><span aria-hidden="true">{{ dato.icono }}</span> {{ dato.texto }}</div>
+      }
+
+      <div class="nota">
+        En tienda tenemos más talles, más colores y ofertas que cambian cada semana.
+      </div>
+
+      <a class="btn btn-primario btn-llegar" [href]="urlMapa" target="_blank" rel="noopener">
+        Cómo llegar
+      </a>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,13 @@
+<section id="opiniones">
+  <h2>Lo que dicen nuestros clientes</h2>
+  <p class="subt">Reseñas reales de nuestra página de Facebook</p>
+
+  <div class="testimonios">
+    @for (testimonio of testimonios; track testimonio.autor) {
+      <figure class="testi">
+        <blockquote>"{{ testimonio.texto }}"</blockquote>
+        <figcaption class="nombre">{{ testimonio.autor }}</figcaption>
+      </figure>
+    }
+  </div>
+</section>

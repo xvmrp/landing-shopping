@@ -1,0 +1,14 @@
+<footer>
+  <span class="brand">🐝 El shopping</span>
+  Santa Rosa 8201, Santiago · Lun a sáb 10:00–20:00
+
+  <div class="footer-social">
+    @for (red of redes; track red.url) {
+      <a [href]="red.url" target="_blank" rel="noopener">
+        <span aria-hidden="true">{{ red.icono }}</span> {{ red.nombre }}
+      </a>
+    }
+  </div>
+
+  <p class="copy">© {{ anio }} El shopping · Le conviene...</p>
+</footer>
