@@ -39,6 +39,6 @@
 <!-- Navegación simple -->
 <nav id="menu-principal" [class.abierta]="menuAbierto()">
   @for (enlace of enlaces; track enlace.href) {
-    <a [href]="enlace.href" (click)="cerrarMenu()">{{ enlace.texto }}</a>
+    <a [href]="enlace.href" (click)="cerrarMenu() ">{{ enlace.texto }}</a>
   }
 </nav>

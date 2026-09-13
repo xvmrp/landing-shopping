@@ -95,6 +95,8 @@ nav {
   font-weight: 600;
   flex-wrap: wrap;
   border-bottom: 1px solid var(--borde-crema);
+  justify-content: center; /* Alinea los elementos al centro horizontalmente */
+  align-items: center;
 }
 
 nav a:hover {
